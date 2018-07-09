@@ -1,3 +1,5 @@
+package solved;
+
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -32,7 +34,7 @@ public class P11559_Event_Planning {
 
                 for (int k = 0; k < w; k++) {
                     int bed = scanner.nextInt();
-                    if (p > bed || bed == 0) {
+                    if (bed == 0) {
                         isValidHotel = false;
                         //System.out.println("hi");
                     }
@@ -40,7 +42,6 @@ public class P11559_Event_Planning {
 
                 if (isValidHotel) {
                     costAmount = p * singleManCost;
-                    System.out.println("mul" + costAmount);
                     if (costAmount <= b) {
                         l.add(costAmount);
                     }
