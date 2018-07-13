@@ -1,4 +1,6 @@
 
+import java.util.Arrays;
+import java.util.IntSummaryStatistics;
 import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -15,27 +17,6 @@ import java.util.regex.Pattern;
 public class TestMatch {
 
     public static void main(String[] args) {
-//        System.out.println(Integer.parseInt("1000000001", 2));
-//
-//        Scanner scanner = new Scanner(System.in);
-//        int input = scanner.nextInt();
-//
-//        if (input <= 100) {
-//            for (int i = 0; i < input; i++) {
-//                int a = scanner.nextInt();
-//                int b = scanner.nextInt();
-//                int c = scanner.nextInt();
-//
-//                if (a > 20 || b > 20 || c > 20) {
-//                    System.out.println("Case " + (i + 1) + ": bad");
-//                } else {
-//                    System.out.println("Case " + (i + 1) + ": good");
-//                }
-//
-//            }
-//
-//        }
-
         String regex = "\\d+";
 
 // positive test cases, should all be "true"
@@ -52,6 +33,28 @@ public class TestMatch {
             System.out.println(m.group());
             break;
         }
+        
+        int x = 6392893;
+        
+        int secondDigit = (x/10)%10;
+        System.out.println("Second Digit: " + secondDigit);
+        
+        int secondDigit1  =  (x % 100) / 10;
+        System.out.println("Second Digit 1: " + secondDigit1);
+        
+        int LastDigit  =  (x % 10);
+        System.out.println("Last Digit: " + LastDigit);
+        
+        int[] tab = new int[5];
+        tab[0] = 3;
+        tab[1] = 5;
+        tab[2] = 1;
+        
+        IntSummaryStatistics stat = Arrays.stream(tab).summaryStatistics();
+        int min = stat.getMin();
+        int max = stat.getMax();
+        System.out.println("Min = " + min);
+        System.out.println("Max = " + max);
 
     }
 }
