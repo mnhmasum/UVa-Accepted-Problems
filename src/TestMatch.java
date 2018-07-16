@@ -55,6 +55,22 @@ public class TestMatch {
         int max = stat.getMax();
         System.out.println("Min = " + min);
         System.out.println("Max = " + max);
+        
+//        float one = (float) 419;
+//        
+//        float x1 = (float) (one/60f);
+//        System.out.println("" + x1);
+//        System.out.println("" + Math.ceil(x1));
+//        
+//        System.out.println("=>" + ((int) Math.ceil(x1)) * 15);
+        
+        int one =  419;
+        
+        int x1 = (one/60) + 1;
+        System.out.println("" + x1);
+        System.out.println("" + Math.ceil(x1));
+        
+        System.out.println("=>" + (x1*15));
 
     }
 }

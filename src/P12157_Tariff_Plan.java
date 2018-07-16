@@ -1,4 +1,4 @@
-
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -9,7 +9,7 @@ import java.util.Scanner;
  */
 public class P12157_Tariff_Plan {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         Scanner scanner = new Scanner(System.in);
         int input = scanner.nextInt();
 
@@ -27,6 +27,7 @@ public class P12157_Tariff_Plan {
 
         }
 
+
     }
 
     public static String performLogic(List<Integer> durationInSeconds) {
@@ -34,36 +35,26 @@ public class P12157_Tariff_Plan {
         int totalJuiceAmount = 0;
 
         for (int i = 0; i < durationInSeconds.size(); i++) {
-            if (durationInSeconds.get(i) >= 1 && durationInSeconds.get(i) <= 29) {
-                totalAmount = totalAmount + 10;
-            } else if (durationInSeconds.get(i) >= 30 && durationInSeconds.get(i) <= 59) {
-                totalAmount = totalAmount + 20;
-            } else if (durationInSeconds.get(i) >= 60) {
-                int t = (durationInSeconds.get(i) / 59);
-                
-                t = t*30;
-                
-                totalAmount = totalAmount + t;
-            } 
+
+            int seconds =  durationInSeconds.get(i);
+
+            int t = (seconds / 30) + 1;
+
+            int amount = t * 10;
+
+            totalAmount = totalAmount + amount;
         }
-            
-        //System.out.println("mile=>" + totalAmount );
-        
+
         for (int i = 0; i < durationInSeconds.size(); i++) {
-            if (durationInSeconds.get(i) >= 1 && durationInSeconds.get(i) <= 59) {
-                totalJuiceAmount = totalJuiceAmount + 15;
-            } else if (durationInSeconds.get(i) > 59 && durationInSeconds.get(i) <= 119) {
-                totalJuiceAmount = totalJuiceAmount + 30;
+
+            int seconds = durationInSeconds.get(i);
+
+            int t = (seconds / 60) + 1;
+
+            int amount = t * 15;
             
-            }  else if (durationInSeconds.get(i) > 59) {
-                int t = (durationInSeconds.get(i) / 59);
-                
-                t = t*15;
-                totalJuiceAmount = totalJuiceAmount + t;
-            }
+            totalJuiceAmount = totalJuiceAmount + amount;
         }
-        
-        //System.out.println("jiuce=>" + totalJuiceAmount);
 
         String msg = "";
 
