@@ -24,38 +24,36 @@ public class TestMatch {
         System.out.println("12345".matches(regex));
         System.out.println("123456789".matches(regex));
 
-
         Pattern pp = Pattern.compile("\\d+");
         Matcher m = pp.matcher("sdfsdf123sdfs3464ew111");
-        
-        while(m.find())
-        {
+
+        while (m.find()) {
             System.out.println(m.group());
             break;
         }
-        
+
         int x = 6392893;
-        
-        int secondDigit = (x/10)%10;
+
+        int secondDigit = (x / 10) % 10;
         System.out.println("Second Digit: " + secondDigit);
-        
-        int secondDigit1  =  (x % 100) / 10;
+
+        int secondDigit1 = (x % 100) / 10;
         System.out.println("Second Digit 1: " + secondDigit1);
-        
-        int LastDigit  =  (x % 10);
+
+        int LastDigit = (x % 10);
         System.out.println("Last Digit: " + LastDigit);
-        
+
         int[] tab = new int[5];
         tab[0] = 3;
         tab[1] = 5;
         tab[2] = 1;
-        
+
         IntSummaryStatistics stat = Arrays.stream(tab).summaryStatistics();
         int min = stat.getMin();
         int max = stat.getMax();
         System.out.println("Min = " + min);
         System.out.println("Max = " + max);
-        
+
 //        float one = (float) 419;
 //        
 //        float x1 = (float) (one/60f);
@@ -63,14 +61,26 @@ public class TestMatch {
 //        System.out.println("" + Math.ceil(x1));
 //        
 //        System.out.println("=>" + ((int) Math.ceil(x1)) * 15);
-        
-        int one =  419;
-        
-        int x1 = (one/60) + 1;
+        int one = 419;
+
+        int x1 = (one / 60) + 1;
         System.out.println("" + x1);
         System.out.println("" + Math.ceil(x1));
-        
-        System.out.println("=>" + (x1*15));
+
+        System.out.println("=>" + (x1 * 15));
+
+        int arr1[] = {0, 1, 2, 3, 4, 5};
+        int arr2[] = {5, 10, 20, 30, 40, 50};
+
+        // copies an array from the specified source array
+        System.arraycopy(arr1, 0, arr2, 0, 4);
+        System.out.print("array2 = ");
+        System.out.print(arr2[0] + " ");
+        System.out.print(arr2[1] + " ");
+        System.out.print(arr2[2] + " ");
+        System.out.print(arr2[3] + " ");
+        System.out.print(arr2[4] + " ");
+        System.out.print(arr2[5] + " ");
 
     }
 }
